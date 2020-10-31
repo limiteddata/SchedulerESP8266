@@ -30,7 +30,6 @@ I'm doing this task
 Unknown was compleated at 1604128405
 
 
-// in this case the task gets called only once
 scheduler.schedules.push_back(ScheduleTask("Task3 (nonrepeatable)", 1604130753 ,task,false));
 
 Result:
