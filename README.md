@@ -8,30 +8,36 @@ To use the library you need to create a Scheduler object (ex Scheduler scheduler
 
 To add a new schedule you can add them in the setup like this:
 
+```.cpp
 bool days[7] = {false, true, true, true, true, true, false};
 scheduler.schedules.push_back(ScheduleTask("Task1 (repeatable only in working days)", days, 1604127570 ,task));
 
+/*
 Result:
 I'm doing this task
-Task1 (repeatable only in working days) was compleated at 1604127570
+Task1 (repeatable only in working days) was compleated at 1604127570*/
 
 
 scheduler.schedules.push_back(ScheduleTask("Task2 (repeatable every day)",1604128239 ,task));
 
+/*
 Result:
 I'm doing this task
-Task2 (repeatable every day) was compleated at 1604128239
+Task2 (repeatable every day) was compleated at 1604128239*/
 
 
 scheduler.schedules.push_back(ScheduleTask(1604128405 ,task));
 
+/*
 Result:
 I'm doing this task
-Unknown was compleated at 1604128405
+Unknown was compleated at 1604128405*/
 
 
 scheduler.schedules.push_back(ScheduleTask("Task3 (nonrepeatable)", 1604130753 ,task,false));
 
+/*
 Result:
 I'm doing this task
-Task3 (nonrepeatable) was compleated at 1604130753
+Task3 (nonrepeatable) was compleated at 1604130753*/
+```
