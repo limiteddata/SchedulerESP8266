@@ -1,7 +1,7 @@
 {
   "name": "SchedulerESP8266",
   "version": "1.0.0",
-  "description": "A \"Hello world\" program is a computer program that outputs \"Hello World\" (or some variant) on a display device",
+  "description": "This is a library for creating timed based schedules(NTP) for the ESP8266",
   "keywords": "scheduler, time, ntp",
   "repository":
   {
