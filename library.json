@@ -1,0 +1,27 @@
+{
+  "name": "SchedulerESP8266",
+  "version": "1.0.0",
+  "description": "A \"Hello world\" program is a computer program that outputs \"Hello World\" (or some variant) on a display device",
+  "keywords": "scheduler, time, ntp",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/limiteddata/SchedulerESP8266.git"
+  },
+  "authors":
+  [
+    {
+      "name": "limiteddata",
+      "email": "limiteddata09@gmail.com"
+    }
+  ],
+  "dependencies": [
+    {
+        "owner": "Fabrice Weinberg",
+        "name": "NTPClient",
+        "version": "^3.0.0"
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif8266"
+}
