@@ -1,6 +1,6 @@
 {
   "name": "SchedulerESP8266",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This is a library for creating timed based schedules(NTP) for the ESP8266",
   "keywords": "scheduler, time, ntp",
   "repository":

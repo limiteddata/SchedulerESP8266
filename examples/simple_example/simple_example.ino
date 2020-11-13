@@ -31,26 +31,26 @@ void setup() {
     Su Mo Tu We Th Fr Sa*/
   bool taskWeek[7] = {false, true, true, true, true, true, false};
 
-  scheduler.schedules.push_back(ScheduleTask("Task1 (repeatable only in working days)", taskWeek, 1604127570 ,task));
+  scheduler.add(ScheduleTask("Task1 (repeatable only in working days)", taskWeek, 1604127570 ,task));
   /*
   Result:
   I'm doing this task
   Task1 (repeatable only in working days) was compleated at 1604127570
   */
-  scheduler.schedules.push_back(ScheduleTask("Task2 (repeatable every day)",1604128239 ,task));
+  scheduler.add(ScheduleTask("Task2 (repeatable every day)",1604128239 ,task));
   /*
   Result:
   I'm doing this task
   Task2 (repeatable every day) was compleated at 1604128239
   */
-  scheduler.schedules.push_back(ScheduleTask(1604128405 ,task));
+  scheduler.add(ScheduleTask(1604128405 ,task));
   /*  
   Result:
   I'm doing this task
   Unknown was compleated at 1604128405
  */
   // in this case the task gets called only once
-  scheduler.schedules.push_back(ScheduleTask("Task3 (nonrepeatable)", 1604130753 ,task,false));
+  scheduler.add(ScheduleTask("Task3 (nonrepeatable)", 1604130753 ,task,false));
   /* 
   Result:
   I'm doing this task

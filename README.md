@@ -9,35 +9,25 @@ To use the library you need to create a Scheduler object (ex Scheduler scheduler
 To add a new schedule you can add them in the setup like this:
 
 ```.cpp
+
 bool days[7] = {false, true, true, true, true, true, false};
-scheduler.schedules.push_back(ScheduleTask("Task1 (repeatable only in working days)", days, 1604127570 ,task));
 
-/*
-Result:
-I'm doing this task
-Task1 (repeatable only in working days) was compleated at 1604127570*/
+scheduler.add(ScheduleTask("Task1 (repeatable only in working days)", days, 1604127570 ,task));
 
 
-scheduler.schedules.push_back(ScheduleTask("Task2 (repeatable every day)",1604128239 ,task));
-
-/*
-Result:
-I'm doing this task
-Task2 (repeatable every day) was compleated at 1604128239*/
+scheduler.add(ScheduleTask("Task3 (nonrepeatable)", 1604130753 ,task,false));
 
 
-scheduler.schedules.push_back(ScheduleTask(1604128405 ,task));
+/* using lambda functions to call multiple functions*/
+String _name = "";
+int _a = 11;
+int _b = 21;
 
-/*
-Result:
-I'm doing this task
-Unknown was compleated at 1604128405*/
+ScheduleTask task = ScheduleTask("Task1", days, 1605310201,  
+  [=](){    
+      sayHi(_name);
+      sum(_a,_b);
+  });
+scheduler.add(task);
 
-
-scheduler.schedules.push_back(ScheduleTask("Task3 (nonrepeatable)", 1604130753 ,task,false));
-
-/*
-Result:
-I'm doing this task
-Task3 (nonrepeatable) was compleated at 1604130753*/
 ```

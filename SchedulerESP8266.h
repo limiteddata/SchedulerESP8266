@@ -14,7 +14,6 @@ Contact: limiteddata09@gmail.com
 class Scheduler
 {
 private:
-    bool SerialDebug;
     int lastCurrentDay = -1;
 public:
     std::vector<ScheduleTask> schedules;
@@ -22,4 +21,7 @@ public:
     void update();
     void begin();
     void setUTC(int utc);
+    void add(ScheduleTask &task);
+    void Remove(int index);
+    void RemoveAt(int Timestamp);
 };
