@@ -17,9 +17,9 @@ void Scheduler::begin(){
 /**
  * Sets the offset to the NTPClient and also for all the tasks, recommended to use GMT/UTC+0
  */
-void Scheduler::setUTC(int utc){
+void Scheduler::setUTC(unsigned long utc){
     ntpTime.setTimeOffset(utc * 60 * 60);
-    for (int i = 0; i < this->schedules.size(); i++) this->schedules[i].timestamp+=utc * 60 * 60;
+    for (size_t i = 0; i < this->schedules.size(); i++) this->schedules[i].timestamp+=utc * 60 * 60;
 }
 
 /**
@@ -49,7 +49,7 @@ void Scheduler::Remove(int index){
 /**
  * Remove the task at the specified timestamp
  */
-void Scheduler::RemoveAt(int Timestamp){
+void Scheduler::RemoveAt(unsigned long Timestamp){
     for (size_t i = 0; i < this->schedules.size(); i++)
     {
         if (this->schedules[i].timestamp == Timestamp){
@@ -77,7 +77,7 @@ void Scheduler::update(){
     }
 
     unsigned long currentTime = ntpTime.getEpochTime();
-    for (int i = 0; i < schedules.size(); i++)
+    for (size_t i = 0; i < schedules.size(); i++)
     {
         // check if the current time matches the timestamp for each task
         if (this->schedules[i].repeat == true){
@@ -89,6 +89,5 @@ void Scheduler::update(){
         }else{
             if (currentTime == this->schedules[i].timestamp && this->schedules[i].taskCompleted == false && this->schedules[i].enable == true) this->schedules[i].doTask();
         }
-
     }
 }
