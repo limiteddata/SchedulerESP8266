@@ -4,8 +4,7 @@
 WiFiUDP ntpUDP;
 NTPClient ntpTime(ntpUDP);
 
-Scheduler::Scheduler(){
-}
+Scheduler::Scheduler(){}
 
 /**
  * Initializes the NTPClient to get the time
@@ -73,7 +72,7 @@ void Scheduler::update(){
     if (this->lastCurrentDay != currentDay){
         // make all the task doable for this next day
         this->lastCurrentDay = currentDay;
-        for (int i = 0; i < this->schedules.size(); i++) if (this->schedules[i].repeat == true) this->schedules[i].taskCompleted = false;
+        for (size_t i = 0; i < this->schedules.size(); i++) if (this->schedules[i].repeat == true) this->schedules[i].taskCompleted = false;
     }
 
     unsigned long currentTime = ntpTime.getEpochTime();

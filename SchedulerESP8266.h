@@ -20,8 +20,8 @@ public:
     Scheduler();
     void update();
     void begin();
-    void setUTC(int utc);
+    void setUTC(unsigned long utc);
     void add(ScheduleTask &task);
     void Remove(int index);
-    void RemoveAt(int Timestamp);
+    void RemoveAt(unsigned long Timestamp);
 };
